@@ -6,6 +6,8 @@ namespace CS01
         static void Main(string[] args)
         {
             Exam.RunLogic();
+            UserInput userInput = new();
+            userInput?.GetInput();
            
             // List<int> numbers = new List<int> { 5, 12, 6, 7, 9, 11 };
             // Func<int, bool> isEven = n =>n %2 ==0;
