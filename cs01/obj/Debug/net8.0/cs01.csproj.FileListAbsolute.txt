@@ -1,0 +1,15 @@
+D:\0 Dotnet\cs01\bin\Debug\net8.0\cs01.exe
+D:\0 Dotnet\cs01\bin\Debug\net8.0\cs01.deps.json
+D:\0 Dotnet\cs01\bin\Debug\net8.0\cs01.runtimeconfig.json
+D:\0 Dotnet\cs01\bin\Debug\net8.0\cs01.dll
+D:\0 Dotnet\cs01\bin\Debug\net8.0\cs01.pdb
+D:\0 Dotnet\cs01\obj\Debug\net8.0\cs01.GeneratedMSBuildEditorConfig.editorconfig
+D:\0 Dotnet\cs01\obj\Debug\net8.0\cs01.AssemblyInfoInputs.cache
+D:\0 Dotnet\cs01\obj\Debug\net8.0\cs01.AssemblyInfo.cs
+D:\0 Dotnet\cs01\obj\Debug\net8.0\cs01.csproj.CoreCompileInputs.cache
+D:\0 Dotnet\cs01\obj\Debug\net8.0\cs01.sourcelink.json
+D:\0 Dotnet\cs01\obj\Debug\net8.0\cs01.dll
+D:\0 Dotnet\cs01\obj\Debug\net8.0\refint\cs01.dll
+D:\0 Dotnet\cs01\obj\Debug\net8.0\cs01.pdb
+D:\0 Dotnet\cs01\obj\Debug\net8.0\cs01.genruntimeconfig.cache
+D:\0 Dotnet\cs01\obj\Debug\net8.0\ref\cs01.dll
