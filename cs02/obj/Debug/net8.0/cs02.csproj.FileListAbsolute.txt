@@ -1,0 +1,15 @@
+D:\0 Dotnet\cs02\bin\Debug\net8.0\cs02.exe
+D:\0 Dotnet\cs02\bin\Debug\net8.0\cs02.deps.json
+D:\0 Dotnet\cs02\bin\Debug\net8.0\cs02.runtimeconfig.json
+D:\0 Dotnet\cs02\bin\Debug\net8.0\cs02.dll
+D:\0 Dotnet\cs02\bin\Debug\net8.0\cs02.pdb
+D:\0 Dotnet\cs02\obj\Debug\net8.0\cs02.GeneratedMSBuildEditorConfig.editorconfig
+D:\0 Dotnet\cs02\obj\Debug\net8.0\cs02.AssemblyInfoInputs.cache
+D:\0 Dotnet\cs02\obj\Debug\net8.0\cs02.AssemblyInfo.cs
+D:\0 Dotnet\cs02\obj\Debug\net8.0\cs02.csproj.CoreCompileInputs.cache
+D:\0 Dotnet\cs02\obj\Debug\net8.0\cs02.sourcelink.json
+D:\0 Dotnet\cs02\obj\Debug\net8.0\cs02.dll
+D:\0 Dotnet\cs02\obj\Debug\net8.0\refint\cs02.dll
+D:\0 Dotnet\cs02\obj\Debug\net8.0\cs02.pdb
+D:\0 Dotnet\cs02\obj\Debug\net8.0\cs02.genruntimeconfig.cache
+D:\0 Dotnet\cs02\obj\Debug\net8.0\ref\cs02.dll
