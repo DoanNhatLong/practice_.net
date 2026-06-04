@@ -8,7 +8,7 @@ namespace projectCs.Entity;
 
 [Table("document")]
 [Index("CustomerId", Name = "customer_id")]
-[Index("DocumentType", "ReferenceNumber", Name = "idx_doc_type_ref")]
+[Index("Type", "ReferenceNumber", Name = "idx_doc_type_ref")]
 [Index("UserId", Name = "user_id")]
 public partial class Document
 {
