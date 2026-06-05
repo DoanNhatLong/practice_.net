@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using project_trade.Dto;
 using project_trade.Entity;
 using project_trade.Service;
 
@@ -15,6 +16,12 @@ IPortfoliosService portfoliosService
     {
         var port = portfoliosService.getAll();
         return Ok(port);
+    }
+    [HttpPost]
+    public IActionResult addPort([FromBody] PortfoliosDto dto)
+    {
+        portfoliosService.addPort(dto);
+        return Ok("Add Completed");
     }
 }
 
