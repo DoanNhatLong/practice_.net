@@ -19,4 +19,17 @@ public class UserRepository(AppDbContext context) : IUserRepository
         .ToList();
         return user;
     }
+
+    public IEnumerable<AccountDto> getAllAccount()
+    {
+        var account = context.Accounts
+          .Select(a => new AccountDto
+             (
+              a.Id,
+              a.User.Username,
+              a.Balance ?? 0
+              ))
+          .ToList();
+        return account;
+    }
 }

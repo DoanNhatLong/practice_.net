@@ -21,4 +21,22 @@ public class UserController(
         var roles = context.Roles.ToList();
         return Ok(roles);
     }
+    [HttpGet("stocks")]
+    public IActionResult getStock()
+    {
+        var stocks = context.Stocks.ToList();
+        return Ok(stocks);
+    }
+    [HttpGet("o-type")]
+    public IActionResult getType()
+    {
+        var o_type = context.OrderTypes.ToList();
+        return Ok(o_type);
+    }
+    [HttpGet("account")]
+    public IActionResult getAccount()
+    {
+        var account = userRepository.getAllAccount();
+        return Ok(account);
+    }
 }

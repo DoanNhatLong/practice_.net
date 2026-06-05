@@ -6,4 +6,5 @@ namespace project_trade.Repo;
 public interface IUserRepository
 {
     IEnumerable<UserDto> getAll();
+    IEnumerable<AccountDto> getAllAccount();
 }
