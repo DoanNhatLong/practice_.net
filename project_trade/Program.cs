@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.Google;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using project_trade.Entity;
 using project_trade.Repo;
 using project_trade.Repository;
@@ -24,12 +26,27 @@ builder.Services.AddScoped<IPortfoliosRepository, PortfoliosRepository>();
 builder.Services.AddScoped<IPortfoliosService, PortfoliosService>();
 builder.Services.AddScoped<IJwtService, JwtService>();
 builder.Services.AddJwtAuthentication(builder.Configuration);
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
+})
+.AddCookie()
+  .AddGoogle(
+options =>
+{
+    // .NET sẽ tự động tìm trong User Secrets trước
+    options.ClientId = builder.Configuration["Authentication:Google:ClientId"];
+    options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
+});
 
 
 var app = builder.Build();
 
 app.UseHttpsRedirection();
 app.UseCors("AllowAll");
+app.UseAuthentication();
+app.UseAuthorization();
 app.MapControllers();
 
 app.MapGet("/", () => "API Running");

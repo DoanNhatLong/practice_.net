@@ -46,8 +46,31 @@ public class UserController(
     [HttpPost("login")]
     public IActionResult Login([FromBody] LoginRequestDto requestDto)
     {
+        var user = userRepository.FindByUsername(requestDto.Username);
+        if (user == null)
+        {
+            return Ok("Not have");
+        }
+        else if (!BCrypt.Net.BCrypt.Verify(requestDto.Password, user.PasswordHash))
+        {
+            Console.WriteLine("Input: " + requestDto.Password);
+            Console.WriteLine("DB Hash: " + user.PasswordHash);
+            return Ok("Not correct");
+        }
         var token = jwtService.GenerateToken(requestDto.Username);
         return Ok(new { Token = token });
+
+    }
+    [HttpPost("login/create")]
+    public IActionResult Create([FromBody] LoginRequestDto requestDto)
+    {
+        var user = userRepository.FindByUsername(requestDto.Username);
+        if (user != null)
+        {
+            return Ok("Already");
+        }
+        userRepository.CreateUser(requestDto);
+        return Ok("User Added");
 
     }
 }

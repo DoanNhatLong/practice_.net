@@ -22,11 +22,11 @@ public partial class User
 
     [Column("password_hash")]
     [StringLength(255)]
-    public string PasswordHash { get; set; } = null!;
+    public string? PasswordHash { get; set; } = null!;
 
     [Column("email")]
     [StringLength(100)]
-    public string Email { get; set; } = null!;
+    public string? Email { get; set; } = null!;
 
     [Column("role_id")]
     public int? RoleId { get; set; }
