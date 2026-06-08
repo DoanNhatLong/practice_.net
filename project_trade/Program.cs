@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using System.Data;
+using StackExchange.Redis;
 using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using project_trade.Entity;
@@ -26,6 +28,13 @@ builder.Services.AddScoped<IPortfoliosRepository, PortfoliosRepository>();
 builder.Services.AddScoped<IPortfoliosService, PortfoliosService>();
 builder.Services.AddScoped<IJwtService, JwtService>();
 builder.Services.AddJwtAuthentication(builder.Configuration);
+builder.Services.AddSingleton<IConnectionMultiplexer>
+(
+ sp => ConnectionMultiplexer.Connect("localhost:6379")
+ );
+builder.Services.AddScoped<IDbConnection>(sp =>
+    new MySql.Data.MySqlClient.MySqlConnection(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<project_trade.Redis.LeaderboardService>();
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;

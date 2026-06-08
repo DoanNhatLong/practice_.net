@@ -6,4 +6,5 @@ public interface IPortfoliosRepository
 {
     IEnumerable<Portfolio> getAll();
     void addPort(PortfoliosDto portfoliosDto);
+    void CalcAccount(PortfoliosDto portfoliosDto);
 }

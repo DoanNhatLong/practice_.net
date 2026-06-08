@@ -47,6 +47,10 @@
               "target": "Package",
               "version": "[4.2.0, )"
             },
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.79, )"
+            },
             "Microsoft.AspNetCore.Authentication.Google": {
               "target": "Package",
               "version": "[8.0.10, )"
@@ -71,9 +75,21 @@
               "target": "Package",
               "version": "[8.0.10, )"
             },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[9.7.0, )"
+            },
+            "MySqlConnector": {
+              "target": "Package",
+              "version": "[2.6.0, )"
+            },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[8.0.2, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.13.17, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",

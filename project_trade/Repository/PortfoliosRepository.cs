@@ -25,7 +25,25 @@ public class PortfoliosRepository(
             };
             context.Portfolios.Add(newPort);
         }
-        context.SaveChanges();
+    }
+
+    public void CalcAccount(PortfoliosDto portfoliosDto)
+    {
+        var account = context.Accounts
+          .First(p => p.UserId == portfoliosDto.UserId);
+        var stock = context.Stocks
+          .First(s => s.Id == portfoliosDto.StockId);
+        account.Balance -= portfoliosDto.Quantity * stock.CurrentPrice;
+        var order = new Order
+        {
+            UserId = portfoliosDto.UserId,
+            StockId = portfoliosDto.StockId,
+            Quantity = portfoliosDto.Quantity,
+            OrderTypeId = 1,
+            Price = stock.CurrentPrice,
+            OrderDate = DateTime.Now
+        };
+        context.Orders.Add(order);
     }
     public IEnumerable<Portfolio> getAll()
     {
