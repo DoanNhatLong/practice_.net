@@ -1,12 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
 using project_trade.Entity;
+using project_trade.Dto;
+using project_trade.Service;
 using project_trade.Repo;
 
 [ApiController]
 [Route("")]
 public class UserController(
     AppDbContext context,
-    IUserRepository userRepository
+    IUserRepository userRepository,
+    IJwtService jwtService
     ) : ControllerBase
 {
     [HttpGet("users")]
@@ -39,4 +42,13 @@ public class UserController(
         var account = userRepository.getAllAccount();
         return Ok(account);
     }
+
+    [HttpPost("login")]
+    public IActionResult Login([FromBody] LoginRequestDto requestDto)
+    {
+        var token = jwtService.GenerateToken(requestDto.Username);
+        return Ok(new { Token = token });
+
+    }
 }
+
