@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using System.Data;
+using MySqlConnector;
 using StackExchange.Redis;
 using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -33,8 +34,8 @@ builder.Services.AddSingleton<IConnectionMultiplexer>
  sp => ConnectionMultiplexer.Connect("localhost:6379")
  );
 builder.Services.AddScoped<IDbConnection>(sp =>
-    new MySql.Data.MySqlClient.MySqlConnection(builder.Configuration.GetConnectionString("DefaultConnection")));
-builder.Services.AddScoped<project_trade.Redis.LeaderboardService>();
+    new MySqlConnection(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<project_trade.Service.LeaderboardService>();
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;

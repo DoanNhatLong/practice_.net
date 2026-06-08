@@ -119,3 +119,7 @@ D:\0 Dotnet\project_trade\obj\Debug\net8.0\project_trade.genruntimeconfig.cache
 D:\0 Dotnet\project_trade\obj\Debug\net8.0\ref\project_trade.dll
 D:\0 Dotnet\project_trade\bin\Debug\net8.0\BCrypt-Net-Next.dll
 D:\0 Dotnet\project_trade\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Google.dll
+D:\0 Dotnet\project_trade\bin\Debug\net8.0\Dapper.dll
+D:\0 Dotnet\project_trade\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
+D:\0 Dotnet\project_trade\bin\Debug\net8.0\StackExchange.Redis.dll
+D:\0 Dotnet\project_trade\bin\Debug\net8.0\System.IO.Hashing.dll

@@ -1,14 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
 using project_trade.Dto;
-using project_trade.Entity;
 using project_trade.Service;
 
 [ApiController]
 [Route("admin/port")]
 public class portfoliosController
 (
-AppDbContext context,
-IPortfoliosService portfoliosService
+IPortfoliosService portfoliosService,
+LeaderboardService redis
  ) : ControllerBase
 {
     [HttpGet]
@@ -22,6 +21,13 @@ IPortfoliosService portfoliosService
     {
         portfoliosService.addPort(dto);
         return Ok("Add Completed");
+    }
+    [HttpGet("start")]
+    public IActionResult init()
+    {
+        redis.init();
+        return Ok("Redis");
+
     }
 }
 
